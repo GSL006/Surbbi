@@ -3,15 +3,15 @@ var btn = document.getElementById("heartTxt");
 btn.style.opacity = 0;
 var btnVal = 0;
 
-function showImage(){
-	//document.getElementById("imgTxt").style.opacity = 0;
-	myImage.setAttribute("src", imageArray[imageIndex]);
-	myTxt.innerHTML = txtArray[imageIndex];
-	//document.getElementById("imgTxt").style.opacity = 1 - flag;
-	imageIndex++;
-	if(imageIndex >= len){
-		imageIndex = 0;
-	}
+function showImage() {
+    myImage.setAttribute("src", imageArray[imageIndex]);
+    myImage.style.maxWidth = window.innerWidth * 0.9 + "px"; // 90% of screen width
+    myImage.style.maxHeight = window.innerHeight * 0.9 + "px"; // 90% of screen height
+    myTxt.innerHTML = txtArray[imageIndex];
+    imageIndex++;
+    if (imageIndex >= len) {
+        imageIndex = 0;
+    }
 }
 
 function play(){
@@ -26,7 +26,7 @@ function play(){
 	document.getElementById("imgTxt").style.opacity = 1 - flag;
 	if(t == 0){
 		//setTimeout(showImage, 1000);
-		setInterval(showImage, 2500);
+		setInterval(showImage, 5000);
 	}
 	t++;
 }
